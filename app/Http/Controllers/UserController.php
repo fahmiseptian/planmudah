@@ -27,9 +27,9 @@ class UserController extends Controller
             $this->data['member_id'] = null;
         }
     }
-    public function detailUser($id)
+    public function detailUser()
     {
-        $data = User::find($id);
+        $data = User::find($this->data['member_id']);
         if (empty($data)) {
             return response()->json([
                 'message' => 'Pengguna tidak ditemukan',
